@@ -23,6 +23,7 @@ public class Tic_Tac_Toe {
         }
     }
 
+
     private void displayboard(){
         for(int row=0;row<size;row++){
             for (int col=0;col<size;col++){
@@ -33,7 +34,7 @@ public class Tic_Tac_Toe {
     }
     
     private void makeMove(){
-        
+
     }
 
     public static void main(String[] args) {
