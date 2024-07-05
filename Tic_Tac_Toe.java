@@ -1,3 +1,6 @@
+import java.util.Scanner;
+
+
 public class Tic_Tac_Toe {
 
     private static final int size=3;
@@ -23,7 +26,6 @@ public class Tic_Tac_Toe {
         }
     }
 
-
     private void displayboard(){
         for(int row=0;row<size;row++){
             for (int col=0;col<size;col++){
@@ -34,11 +36,55 @@ public class Tic_Tac_Toe {
     }
     
     private void makeMove(){
+        Scanner s = new Scanner(System.in);
+        while (true){
+            System.out.println("enter the row: ");
+            int row=s.nextInt();
+            System.out.println("enter the col: ");
+            int col=s.nextInt();
+            if (row > size){
+                System.out.println("row index out of range! please try again");
+            }
+            if (col > size){
+                System.out.println("col index out of range! please try again");
 
+            } 
+
+            if (tictacboard[row][col]=='-'){
+                tictacboard[row][col]=currentplayer;
+                switchPlayer();
+                break;
+            } else {
+                System.out.println("already that position is full");
+            }
+        }
+        
+    }
+    
+
+
+    private void switchPlayer(){
+        if (currentplayer==user1){
+            currentplayer=user2;
+        } else {
+            currentplayer=user1;
+        }
+        System.out.println("current player changed to next user");
     }
 
+    private checkWin(){
+        
+
+    }
     public static void main(String[] args) {
         Tic_Tac_Toe tic=new Tic_Tac_Toe();
         tic.displayboard();
-    }
+        tic.makeMove();
+        tic.switchPlayer();
+    
+        }
+
+       
+
 }
+
