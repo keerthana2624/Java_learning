@@ -25,7 +25,6 @@ public class Tic_Tac_Toe {
             }
         }
     }
-
     private void displayboard(){
         for(int row=0;row<size;row++){
             for (int col=0;col<size;col++){
@@ -61,7 +60,7 @@ public class Tic_Tac_Toe {
         
     }
     
-
+   
 
     private void switchPlayer(){
         if (currentplayer==user1){
@@ -73,14 +72,30 @@ public class Tic_Tac_Toe {
     }
 
     private checkWin(){
-        
+
 
     }
+
+    private boolean checkTie(){
+        for(int row=0;row<size;row++){
+            for (int col=0;col<size;col++){
+                if (tictacboard[row][col]=='-'){
+                    return false;
+
+                }
+            }
+        }
+        return true;
+       
+    }
+
+
     public static void main(String[] args) {
         Tic_Tac_Toe tic=new Tic_Tac_Toe();
         tic.displayboard();
         tic.makeMove();
         tic.switchPlayer();
+        tic.checkTie();
     
         }
 
